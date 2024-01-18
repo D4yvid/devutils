@@ -40,4 +40,16 @@ final class Filter
 			return $item != $value;
 		};
 	}
+
+	public static function arrayHasValue($value) {
+		return function ($item) use ($value) {
+			return in_array($value, $item);
+		};
+	}
+
+	public static function arrayHasKey($key) {
+		return function ($item) use ($key) {
+			return isset($item[$key]);
+		};
+	}
 }

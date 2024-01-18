@@ -51,4 +51,10 @@ class Mapper
 		};
 	}
 
+	public static function itemKey($key) {
+		return function ($v) use ($key) {
+			return $v[$key];
+		};
+	}
+
 }
